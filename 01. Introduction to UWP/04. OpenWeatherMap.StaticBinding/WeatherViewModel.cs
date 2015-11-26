@@ -29,12 +29,23 @@ namespace OpenWeatherMap.ViewModel
     }
 
 
-    public class WeatherViewModel : INotifyPropertyChanged
+    public class WeatherViewModel : AbstractViewModel
     {
         public string AppID = "2de143494c0b295cca9337e1e96b00e0";
 
-        public int Temperature;
-        public BitmapImage Pic;
+        private int temp;
+        public int Temperature
+        {
+            get { return temp; }
+            set { temp = value; Notify(); }
+        }
+
+        private BitmapImage pic;
+        public BitmapImage Pic
+        {
+            get { return pic; }
+            set { pic = value; Notify(); }
+        }
 
         public ObservableCollection<WeatherRecord> Forecast = new ObservableCollection<WeatherRecord>();
 
@@ -45,11 +56,6 @@ namespace OpenWeatherMap.ViewModel
             dynamic x = Newtonsoft.Json.JsonConvert.DeserializeObject(res);
             Temperature = x.main.temp;
             Pic = new BitmapImage(new Uri($"http://openweathermap.org/img/w/{x.weather[0].icon}.png"));
-            if (PropertyChanged!=null)
-            {
-                PropertyChanged(this,new PropertyChangedEventArgs("Temperature"));
-                PropertyChanged(this,new PropertyChangedEventArgs("Pic"));
-            }
             res = await cli.GetStringAsync("http://api.openweathermap.org/data/2.5/forecast/daily?q=Moscow&mode=json&units=metric&cnt=7&APPID="+AppID);
             x = Newtonsoft.Json.JsonConvert.DeserializeObject(res);
             foreach (var z in x.list)
@@ -72,6 +78,5 @@ namespace OpenWeatherMap.ViewModel
             return dtDateTime;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
