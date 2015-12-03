@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="OpenWeatherMap.ViewModel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenWeatherMap.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="Img" HorizontalAlignment="Center" Height="100" Width="100" Source="{Binding Pic,Mode=OneWay}"/>
+            <TextBlock x:Name="Temp" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="{Binding Temperature,Mode=OneWay}"/>
+            <GridView x:Name="Fore" HorizontalAlignment="Center" ItemsSource="{Binding Forecast}" Margin="0,30,0,0">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Height="50" Width="50" HorizontalAlignment="Center" Source="{Binding Icon}"/>
+                            <TextBlock Text="{Binding Temp}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding Date}" FontSize="9" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </StackPanel>
+    </Grid>
+</Page>
