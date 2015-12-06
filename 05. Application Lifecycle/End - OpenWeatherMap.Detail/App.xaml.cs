@@ -63,12 +63,10 @@ namespace OpenWeatherMap.ViewModel
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Загрузить состояние из ранее приостановленного приложения
-
-                    if (ApplicationData.Current.LocalSettings.Values.ContainsKey("NavigationState"))
-                    {
-                        rootFrame.SetNavigationState((string)ApplicationData.Current.LocalSettings.Values["NavigationState"]);
-                    }
-
+                    //if (ApplicationData.Current.LocalSettings.Values.ContainsKey("NavigationState"))
+                    //{
+                    //    rootFrame.SetNavigationState((string)ApplicationData.Current.LocalSettings.Values["NavigationState"]);
+                    //}                    
                 }
 
                 // Размещение фрейма в текущем окне
@@ -135,6 +133,10 @@ namespace OpenWeatherMap.ViewModel
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Сохранить состояние приложения и остановить все фоновые операции
+
+            //Frame frame = Window.Current.Content as Frame;
+            //ApplicationData.Current.LocalSettings.Values["NavigationState"] = frame.GetNavigationState();
+
             deferral.Complete();
         }
     }

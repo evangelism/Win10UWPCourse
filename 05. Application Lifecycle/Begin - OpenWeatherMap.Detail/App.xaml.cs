@@ -7,7 +7,6 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -63,12 +62,6 @@ namespace OpenWeatherMap.ViewModel
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Загрузить состояние из ранее приостановленного приложения
-
-                    if (ApplicationData.Current.LocalSettings.Values.ContainsKey("NavigationState"))
-                    {
-                        rootFrame.SetNavigationState((string)ApplicationData.Current.LocalSettings.Values["NavigationState"]);
-                    }
-
                 }
 
                 // Размещение фрейма в текущем окне
