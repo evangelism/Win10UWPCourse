@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="OpenWeatherMap.ViewModel.DetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenWeatherMap.Simple"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!--<Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Save" Label="appbarbutton" Click="AppBarButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel Margin="10">
+            <StackPanel x:Name="First" Margin="10">
+                <TextBlock Text="{x:Bind Data.FullDate}" FontSize="40"/>
+                <Image Source="{x:Bind Data.Icon}" Height="200" Width="200" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel x:Name="Second" Margin="10" RelativePanel.Below="First">
+                <TextBlock Text="{x:Bind Data.Temp}" FontSize="50" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20">Humidity:</TextBlock>
+                    <TextBlock Text="{x:Bind Data.Humidity}"  FontSize="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20">Pressure:</TextBlock>
+                    <TextBlock Text="{x:Bind Data.Pressure}"  FontSize="20"/>
+                </StackPanel>
+            </StackPanel>
+        </RelativePanel>
+    </Grid>
+</Page>
