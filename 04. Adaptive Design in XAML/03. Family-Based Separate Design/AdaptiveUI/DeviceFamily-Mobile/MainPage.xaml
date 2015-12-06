@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="AdaptiveUI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AdaptiveUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image x:Name="Hero" Grid.Row="0" Source="Assets/airtime.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <RelativePanel Grid.Row="1" Background="LightBlue" Padding="12">
+                <Image x:Name="Avatar" Source="Assets/avatar.jpg" Width="100" Height="100" HorizontalAlignment="Left" />
+                <TextBlock x:Name="Username" RelativePanel.Below="Avatar" RelativePanel.AlignHorizontalCenterWith="Avatar" Text="phutureproof" />
+                <StackPanel x:Name="Description" RelativePanel.Below="Username">
+                    <TextBlock x:Name="ImageName" Foreground="White" FontWeight="Light" Text="Airtime" />
+                    <TextBlock Text="9/15/15" />
+                    <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet pulvinar nunc. In et gravida ipsum. Morbi congue consequat ullamcorper. Integer ornare porta convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sem nisi, ornare vel laoreet vel, accumsan facilisis tortor. Pellentesque ut nunc in leo vehicula pretium et at quam. Aliquam euismod id purus nec ultrices. Aliquam sed nisl at erat maximus finibus in sed urna. Nulla ullamcorper vehicula ex, in porta ante ullamcorper id. Phasellus a enim vitae odio ultricies semper. Suspendisse fermentum, erat in sodales accumsan, lacus urna aliquam nisi, sed ultricies dolor orci quis ligula." TextWrapping="WrapWholeWords" />
+                </StackPanel>
+            </RelativePanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
