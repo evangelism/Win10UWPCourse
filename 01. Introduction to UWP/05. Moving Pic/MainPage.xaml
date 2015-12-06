@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="JumpingCircle.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:JumpingCircle"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Canvas Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image x:Name="ell" Height="50" Width="50" Source="coolobock.png" ManipulationDelta="ell_ManipulationDelta" ManipulationMode="All">
+            <Image.RenderTransform>
+                <CompositeTransform x:Name="trans"/>
+            </Image.RenderTransform>
+        </Image>
+    </Canvas>
+</Page>
