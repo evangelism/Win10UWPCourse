@@ -40,30 +40,29 @@ namespace OpenWeatherMap.ViewModel
             if (Data == null) throw new Exception("PANIC!");
         }
 
-        //private async void AppBarButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var dataW = Newtonsoft.Json.JsonConvert.SerializeObject(Data);
-           
-        //    //Создаем объект диалога
-        //    FileSavePicker savePicker = new FileSavePicker();
-        //    savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+        private async void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dataW = Newtonsoft.Json.JsonConvert.SerializeObject(Data);
 
-        //    // Предлагаем пользователю тип, в котором он может сохранить файл  
-        //    savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
+            //Создаем объект диалога
+            FileSavePicker savePicker = new FileSavePicker();
+            savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
 
-        //    // Указываем имя файла по умолчанию, если пользователь не указал его или выбрал существующее
-        //    savePicker.SuggestedFileName = "New Document";
+            // Предлагаем пользователю тип, в котором он может сохранить файл  
+            savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
 
-        //    // Открываем диалог, чтобы пользователь сохранил файл
-        //    Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
+            // Указываем имя файла по умолчанию, если пользователь не указал его или выбрал существующее
+            savePicker.SuggestedFileName = "New Document";
 
-        //    if (file != null)
-        //    {
-        //        // запись в файл 
-        //        await FileIO.WriteTextAsync(file, dataW);
-               
-        //    }    
-           
-        //}
+            // Открываем диалог, чтобы пользователь сохранил файл
+            Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
+
+            if (file != null)
+            {
+                // запись в файл 
+                await FileIO.WriteTextAsync(file, dataW);
+
+            }
+        }
     }
 }

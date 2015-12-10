@@ -1,0 +1,2 @@
+MainPackage=C:\Users\magore\Documents\GitHub\Win10UWPCourse\09. Store and Monetization\End - OpenWeatherMap.Detail\bin\x86\Release\OpenWeatherMap.ViewModel_1.1.1.0_x86.appx
+SymbolPackage=C:\Users\magore\Documents\GitHub\Win10UWPCourse\09. Store and Monetization\End - OpenWeatherMap.Detail\AppPackages\OpenWeatherMap.ViewModel_1.1.1.0_Test\OpenWeatherMap.ViewModel_1.1.1.0_x86.appxsym
