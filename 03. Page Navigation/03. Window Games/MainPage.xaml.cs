@@ -41,7 +41,12 @@ namespace WindowGames
             var a = s.Split(',');
             var dx = int.Parse(a[0]);
             var dy = int.Parse(a[1]);
-            if (dx == 0 && dy == 0) AV.TryEnterFullScreenMode();
+            if (dx == 0 && dy == 0)
+            {
+                if (AV.IsFullScreen) AV.ExitFullScreenMode();
+                else AV.TryEnterFullScreenMode();
+            }
+
             else
             {
                 x += dx;
